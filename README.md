@@ -1,51 +1,97 @@
-# Evironment var
-To be to use the Open AI key more securely, you need to store in a session. In this frmework we use a SESSION var and os.getenv("OPENAI_API_KEY") to keep it hidden from the source code.
-You simply need to: 
-``` bash
-export OPENAI_API_KEY=KEY
+# How much does an LLM know about my programming language?
+
+This repository contains the official framework for systematically evaluating the level of knowledge Large Language Models (LLMs) have about specific programming languages.
+
+Unlike execution-based evaluations, this framework uses **ANTLR-based syntactic analysis** to extract variables (keywords and grammar rules) from LLM-generated code. This allows for a "diagnostic" view of model proficiency, capturing latent knowledge even in code snippets that are not well-formed or fail to execute.
+
+## Key Features
+
+* **Granular Metrics:** Measures Keyword/Rule Coverage and Production Validity.
+* **Partial Knowledge Capture:** Analyzes syntactically invalid code to identify where a model’s knowledge fails.
+* **Extensible:** Designed to work with any language that has an ANTLR grammar.
+* **Automatic Reporting:** Generates a complete language coverage report as a Jupyter Notebook.
+
+---
+
+## Requirements
+
+* **Python 3.x**
+* **ANTLR 4**
+
+### Installation
+
+1. Clone this repository.
+2. Install the necessary Python dependencies:
+
+```bash
+pip install -r requirements.txt
+
 ```
 
-and then:
-``` python
+---
+
+## Setup & API Keys
+
+To use OpenAI or other LLM providers, you must store your API keys as environment variables for security. We recommend using a session variable:
+
+**Terminal (Linux/macOS):**
+
+```bash
+export OPENAI_API_KEY='your-key-here'
+
+```
+
+The framework accesses these keys via:
+
+```python
 import os
-os.getenv("OPEN_API_KEY")
+os.getenv("OPENAI_API_KEY")
+
 ```
 
-# Requirements
-- Python 3 (must be installed already)
-- ANTLR 4
+---
 
-## 1. ANTLR
-- Download ANTLR and export class:
-    - cd /usr/local/lib
-    - curl -O https://www.antlr.org/download/antlr-4.13.1-complete.jar
-    - export CLASSPATH="/Users/david/__PYTHON/antlr/antlr-4.13.1-complete.jar:$CLASSPATH" 
+## How to Use the Framework
 
-## 2. Python virtual environment
-- conda create -n "Exp02"
-- conda activate Exp02
+### 1. Inputs
 
-## 3. Install ANTLR4 and requirements
-- pip install -r requirements.txt
+The framework requires two main inputs:
 
-# OPENAI key
-- Read: https://docs.conda.io/projects/conda/en/latest/user-guide/tasks/manage-environments.html#saving-environment-variables
-- The key must be set to be able to use with os.env.
+* **Language Description:** An ANTLR parser and a language template.
+* **Dataset:** A collection of code examples for your target language (Note: Datasets and generated examples are not included in this repository due to size/licensing).
 
+### 2. Adding a New Language
 
+To incorporate a new target language:
 
-# ANTLR
+1. **Parser:** Generate your ANTLR parser (one-file or lexer/parser split).
+2. **Template:** Duplicate an existing language folder and integrate your parser.
+3. **Adaptation:** Change the **root rule** of the parser and adapt the execution/data-handling logic. Specific guidance is provided in the codebase templates.
+4. **Scope (Optional):** You can manually or automatically (via LLM) define custom keyword lists or exclude specific tokens to narrow your research focus.
 
-## How to generate parser
-To generate the parser (only with visitor):
-- bash ../antlr4.sh -Dlanguage=Python3 -visitor -no-listener ANTLRv4Lexer.g4 ANTLRv4Parser.g4
+### 3. Execution
 
-To look at the Parse Tree:
-- bash ../grun.sh Calc declarationExpression -gui
+To compute the metrics for your language:
 
-## How to play with the AST examples
-Execute:
-python main.py t.expr
+1. **Create a Run Script:** In the `run/` folder, create a new script (e.g., `run_my_language.py`) based on the provided examples.
+2. **Point to Dataset:** Inside your script, provide the path to your dataset and call the API functions to extract features.
+3. **Run:**
 
-Change the code to calculate and print in t.expr
+```bash
+python run/your_language.py
+
+```
+
+### 4. Output
+
+After execution, the framework automatically generates:
+
+* **Analysis:** A `.ipynb` (Jupyter Notebook) in the `analysis/` folder containing the language coverage report.
+* **Raw Data:** All extracted variables and features are saved in the `results/` folder.
+
+---
+
+## Note on Datasets
+
+If you need to generate a new dataset of examples using an LLM, refer to the `generation/` folder. You can use the scripts there as a guide to prompt an LLM and save the resulting code examples as your input dataset.
 
