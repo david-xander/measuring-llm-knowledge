@@ -2,7 +2,7 @@
 
 This repository contains the official framework for systematically evaluating the level of knowledge Large Language Models (LLMs) have about specific programming languages.
 
-Unlike execution-based evaluations, this framework uses **ANTLR-based syntactic analysis** to extract variables (keywords and grammar rules) from LLM-generated code. This allows for a "diagnostic" view of model proficiency, capturing latent knowledge even in code snippets that are not well-formed or fail to execute.
+This framework uses **ANTLR-based syntactic analysis** to extract variables (keywords and grammar rules) from LLM-generated code. This allows for a "diagnostic" view of model proficiency, capturing latent knowledge even in code snippets that are not well-formed or fail to execute.
 
 ## Key Features
 
