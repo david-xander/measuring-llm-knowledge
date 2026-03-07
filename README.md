@@ -4,6 +4,12 @@ This repository contains the official framework for systematically evaluating th
 
 This framework uses **ANTLR-based syntactic analysis** to extract variables (keywords and grammar rules) from LLM-generated code. This allows for a "diagnostic" view of model proficiency, capturing latent knowledge even in code snippets that are not well-formed or fail to execute.
 
+By analyzing these variables, the framework can identify "latent knowledge" and structural patterns even in code that fails to compile. This makes it a powerful diagnostic tool for:
+
+- Evaluating LLM Proficiency: Moving beyond "pass/fail" to see what parts of a language a model understands.
+- Dataset Audit: Identifying representativeness issues in datasets, such as those created via systematic translation (e.g., MultiPL-T), which may unintentionally limit the syntactic expressiveness of the target language.
+- Scope Alignment: Comparing model performance against specific language subsets (e.g., DQL in SQL or Class Diagrams in PlantUML) to ensure evaluations match the intended use case.
+
 ## Key Features
 
 * **Granular Metrics:** Measures Keyword/Rule Coverage and Production Validity.
