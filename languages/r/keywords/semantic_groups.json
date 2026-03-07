@@ -1,0 +1,102 @@
+{
+  "groups": {
+    "Control Flow": [
+      "break",
+      "else",
+      "for",
+      "if",
+      "in",
+      "next",
+      "repeat",
+      "while"
+    ],
+    "Declarations": [
+      "function",
+      ":=",
+      "=",
+      "A",
+      "E",
+      "F",
+      "X",
+      "a"
+    ],
+    "Logical Operators": [
+      "FALSE",
+      "TRUE",
+      "NaN",
+      "NULL",
+      "NA",
+      "inf",
+      "|",
+      "||"
+    ],
+    "Arithmetic Operators": [
+      "->",
+      "->>",
+      "..."
+    ],
+    "String Delimiters": [
+      "\"",
+      "'",
+      "\\",
+      "\n",
+      "\r"
+    ],
+    "Braces and Syntax Elements": [
+      "{",
+      "}",
+      "(",
+      ")"
+    ]
+  },
+  "reasoning": "The keywords were organized based on their functionality in programming. 'Control Flow' includes keywords that dictate the flow of execution, such as loops and conditionals. 'Declarations' consists of keywords used for defining functions and assigning values. 'Logical Operators' comprises keywords that handle boolean values and operations. 'Arithmetic Operators' includes symbols used in operations. 'String Delimiters' groups keywords used for representing string data and special characters. 'Braces and Syntax Elements' includes punctuation and structural keywords crucial for syntax.",
+  "excluded_keywords": [
+    "!",
+    "!=",
+    "#",
+    "$",
+    "%",
+    "&",
+    "&&",
+    "(",
+    "IR",
+    "C",
+    "*",
+    "+",
+    ",",
+    "-",
+    ".",
+    "/",
+    "0",
+    "9",
+    ":",
+    "::",
+    ":::",
+    ";",
+    "<",
+    "<-",
+    "<<-",
+    "<=",
+    ">",
+    "==",
+    ">=",
+    "?",
+    "@",
+    "[",
+    "[[",
+    "\\",
+    "\n",
+    "\r",
+    "]",
+    "]]",
+    "^",
+    "_",
+    "`",
+    "~",
+    "i",
+    "u",
+    "x"
+  ],
+  "model": "gpt-4o-mini",
+  "language": "r"
+}

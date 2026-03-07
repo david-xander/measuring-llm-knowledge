@@ -1,0 +1,96 @@
+{
+  "groups": {
+    "other_uml_type": [
+      "Sequence",
+      "Set",
+      "Bag",
+      "OrderedSet",
+      "SortedSet",
+      "Map",
+      "SortedMap",
+      "Function"
+    ],
+    "leftAncestorSymbol": [
+      "<|--",
+      "<|-",
+      "<|---",
+      "<|..",
+      "^--"
+    ],
+    "visibility": [
+      "+",
+      "-",
+      "#",
+      "~"
+    ],
+    "modifier": [
+      "static",
+      "classifier",
+      "abstract"
+    ],
+    "rightAncestorSymbol": [
+      "--|>",
+      "-|>",
+      "---|>",
+      "..|>",
+      "--^"
+    ],
+    "associationSymbol": [
+      "-",
+      "--",
+      "---",
+      "-->",
+      "->",
+      "<--",
+      "<-"
+    ],
+    "aggregationSymbol": [
+      "o--",
+      "--o",
+      "o-->",
+      "<--o"
+    ],
+    "compositionSymbol": [
+      "*--",
+      "*-",
+      "--*",
+      "-*",
+      "*-->",
+      "*->",
+      "<--*",
+      "<-*"
+    ],
+    "dependencySymbol": [
+      "..",
+      "..>",
+      "<..",
+      "...",
+      "...>",
+      "<..."
+    ],
+    "direction": [
+      ">",
+      "<"
+    ],
+    "stereotype": [
+      "<<",
+      ">>"
+    ]
+  },
+  "reasoning": "MANUAL",
+  "excluded_keywords": [
+    "/*",
+    "*/",
+    "\\u2211",
+    "\\u222B",
+    "\\\\",
+    "\\'",
+    "\"",
+    ",",
+    ".",
+    "_",
+    "u"
+  ],
+  "model": "gpt-4o-mini",
+  "language": "plantuml"
+}

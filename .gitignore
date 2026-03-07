@@ -1,0 +1,13 @@
+# Python bytecode cache
+__pycache__/
+**/__pycache__/
+
+# Python compiled files
+*.py[cod]
+*$py.class
+
+# macOS Finder metadata
+.DS_Store
+**/.DS_Store
+
+

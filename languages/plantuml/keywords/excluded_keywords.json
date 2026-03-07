@@ -1,0 +1,18 @@
+{
+  "excluded_keywords": [
+    "/*",
+    "*/",
+    "\\u2211",
+    "\\u222B",
+    "\\\\",
+    "\\'",
+    "\"",
+    ",",
+    ".",
+    "_",
+    "u"
+  ],
+  "reasoning": "MANUAL",
+  "model": "gpt-4o-mini",
+  "language": "plantuml"
+}

@@ -1,0 +1,92 @@
+{
+  "groups": {
+    "Control Flow": [
+      "break",
+      "continue",
+      "do",
+      "else",
+      "elseif",
+      "end",
+      "for",
+      "if",
+      "repeat",
+      "return",
+      "then",
+      "while"
+    ],
+    "Logical Operators": [
+      "and",
+      "not",
+      "or"
+    ],
+    "Data Types": [
+      "false",
+      "nil",
+      "true"
+    ],
+    "Declarations": [
+      "function",
+      "local",
+      "goto",
+      "x"
+    ],
+    "Loop Constructs": [
+      "repeat",
+      "for",
+      "while"
+    ],
+    "Special Characters": [
+      "0",
+      "'",
+      "\\",
+      "\n",
+      "\r"
+    ]
+  },
+  "reasoning": "The grouping is based on the functionality and purpose of each keyword in a programming context. Keywords related to control flow statements (like conditionals and loops) are combined under 'Control Flow,' while logical operators that perform boolean logic operations are listed under 'Logical Operators.' Keywords that denote boolean data types fall under 'Data Types.' 'Declarations' captures keywords involved in defining functions and variables, while 'Loop Constructs' includes specific keywords for looping constructs. Finally, 'Special Characters' includes non-keyword symbols that serve specific syntactical purposes.",
+  "excluded_keywords": [
+    "!",
+    "\"",
+    "#",
+    "%",
+    "&",
+    "(",
+    ")",
+    "*",
+    "+",
+    ",",
+    "-",
+    "--",
+    ".",
+    "..",
+    "...",
+    "/",
+    "//",
+    ":",
+    "::",
+    ";",
+    "<",
+    "<<",
+    "<=",
+    "=",
+    "==",
+    ">",
+    ">=",
+    ">>",
+    "[",
+    "'",
+    "\\",
+    "\n",
+    "\r",
+    "]",
+    "^",
+    "u{",
+    "{",
+    "|",
+    "}",
+    "~",
+    "~="
+  ],
+  "model": "gpt-4o-mini",
+  "language": "lua"
+}

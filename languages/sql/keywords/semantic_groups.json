@@ -1,0 +1,237 @@
+{
+  "groups": {
+    "Arithmetic Operators": [
+      "*",
+      "*=",
+      "+",
+      "+=",
+      "-",
+      "-=",
+      "/",
+      "DIV"
+    ],
+    "Logical Operators": [
+      "AND",
+      "OR",
+      "NOT",
+      "IS",
+      "ISNULL"
+    ],
+    "Relational Operators": [
+      "<",
+      "=",
+      "<=",
+      "<>",
+      "IS NOT",
+      "<>",
+      "IN"
+    ],
+    "Control Flow": [
+      "BEGIN",
+      "END",
+      "IF",
+      "ELSE",
+      "ELSEIF",
+      "CASE",
+      "WHILE",
+      "FOR",
+      "LOOP",
+      "REPEAT",
+      "RETURN",
+      "DO",
+      "EXIT"
+    ],
+    "Type-related": [
+      "BLOB",
+      "CHAR",
+      "VARCHAR",
+      "INT",
+      "FLOAT",
+      "DECIMAL",
+      "NUMERIC",
+      "DATE",
+      "TIME",
+      "TIMESTAMP",
+      "BOOLEAN",
+      "JSON",
+      "GEOMETRY",
+      "POLYGON",
+      "POINT",
+      "LINESTRING",
+      "ENUM",
+      "SET"
+    ],
+    "Function Keywords": [
+      "ABS",
+      "AVG",
+      "COUNT",
+      "SUM",
+      "MAX",
+      "MIN",
+      "CONCAT",
+      "MID",
+      "LEFT",
+      "RIGHT",
+      "UPPER",
+      "LOWER",
+      "CAST",
+      "CONVERT"
+    ],
+    "Database Operations": [
+      "CREATE",
+      "ALTER",
+      "DROP",
+      "DELETE",
+      "INSERT",
+      "UPDATE",
+      "REPLACE",
+      "TRUNCATE",
+      "COMMIT",
+      "ROLLBACK"
+    ],
+    "Data Retrieval": [
+      "SELECT",
+      "FROM",
+      "WHERE",
+      "GROUP BY",
+      "ORDER BY",
+      "HAVING",
+      "JOIN",
+      "INNER JOIN",
+      "LEFT JOIN",
+      "RIGHT JOIN"
+    ],
+    "Query Modifiers": [
+      "DISTINCT",
+      "LIMIT",
+      "OFFSET",
+      "UNION",
+      "INTERSECT"
+    ],
+    "Sections and Blocks": [
+      "BEGIN",
+      "WITH",
+      "RETURNING"
+    ],
+    "Utilities and Functions": [
+      "CURDATE",
+      "CURRENT_TIMESTAMP",
+      "NOW",
+      "DATEDIFF",
+      "PROCEDURE",
+      "SET",
+      "LOAD_FILE"
+    ],
+    "Data Types and Structure": [
+      "TABLE",
+      "COLUMN",
+      "INDEX",
+      "VIEW",
+      "TRIGGER",
+      "FUNCTION",
+      "STORED PROCEDURE"
+    ],
+    "User Management Keywords": [
+      "GRANT",
+      "REVOKE",
+      "CREATE USER",
+      "DROP USER",
+      "SHOW GRANTS"
+    ],
+    "Transaction Control": [
+      "COMMIT",
+      "ROLLBACK",
+      "SAVEPOINT",
+      "START TRANSACTION",
+      "SET AUTOCOMMIT"
+    ],
+    "Control Structures": [
+      "CASE",
+      "COALESCE",
+      "IFNULL",
+      "LEAD",
+      "LAG",
+      "WHILE"
+    ],
+    "Set Operations": [
+      "UNION",
+      "INTERSECT",
+      "EXCEPT"
+    ],
+    "Error Handling": [
+      "TRY",
+      "CATCH",
+      "THROW",
+      "RESIGNAL",
+      "SIGNAL"
+    ],
+    "Security": [
+      "DENY",
+      "GRANT",
+      "REVOKE",
+      "CREATE ROLE"
+    ],
+    "Session Control": [
+      "SET SESSION",
+      "SET GLOBAL",
+      "SHOW SESSION VARIABLES"
+    ],
+    "Extensions": [
+      "EXTENSION",
+      "CREATE EXTENSION",
+      "DROP EXTENSION"
+    ],
+    "Data Formatters": [
+      "FORMAT",
+      "CAST",
+      "CONVERT"
+    ],
+    "Commenting": [
+      "--",
+      "/*",
+      "*/"
+    ],
+    "Miscellaneous": [
+      "NO",
+      "NOT",
+      "WITHIN",
+      "YES"
+    ]
+  },
+  "reasoning": "The keywords were organized based on their purpose in programming and database management. Categories like Arithmetic Operators and Logical Operators capture mathematical and boolean operations, while Control Flow groups all keywords responsible for conditionals and loops. Type-related keywords denote different data types and their manipulation. Database Operations encompasses actions for managing tables and data, while Data Retrieval focuses on SELECT queries. User Management deals with access control, and Transaction Control includes managing database transactions. This way, each keyword is distinctly assigned based on its function, ensuring clarity and usability.",
+  "excluded_keywords": [
+    "!",
+    "\"",
+    "\"\"",
+    "#",
+    "%",
+    "%=",
+    "&",
+    "&=",
+    "(",
+    "@",
+    ":",
+    ";",
+    ",",
+    "|",
+    "|=",
+    "^",
+    "^=",
+    "'",
+    "''",
+    "\\",
+    "\n",
+    "\r",
+    "`",
+    "``",
+    "/",
+    "/*",
+    "*/",
+    "/*!",
+    "--",
+    "//",
+    "/="
+  ],
+  "model": "gpt-4o-mini",
+  "language": "sql"
+}

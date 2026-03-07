@@ -1,0 +1,135 @@
+{
+  "groups": {
+    "literalKeywords": [
+      "True",
+      "False",
+      "None",
+      "0"
+    ],
+    "controlFlow": [
+      "if",
+      "elif",
+      "else",
+      "for",
+      "while",
+      "break",
+      "continue",
+      "match",
+      "case"
+    ],
+    "exceptionHandling": [
+      "try",
+      "except",
+      "finally",
+      "raise"
+    ],
+    "definitions": [
+      "def",
+      "class",
+      "lambda"
+    ],
+    "asyncProgramming": [
+      "async",
+      "await"
+    ],
+    "namespacesAndBinding": [
+      "import",
+      "from",
+      "global",
+      "nonlocal"
+    ],
+    "miscKeywords": [
+      "and",
+      "or",
+      "not",
+      "is",
+      "in",
+      "as",
+      "pass",
+      "yield",
+      "assert",
+      "del"
+    ],
+    "arithmeticOperators": [
+      "+",
+      "-",
+      "*",
+      "**",
+      "/",
+      "//",
+      "%"
+    ],
+    "comparisonOperators": [
+      "==",
+      "!=",
+      "<",
+      ">",
+      "<=",
+      ">=",
+      "<>"
+    ],
+    "bitwiseOperators": [
+      "&",
+      "|",
+      "^",
+      "~",
+      "<<",
+      ">>"
+    ],
+    "assignmentOperators": [
+      "=",
+      "+=",
+      "-=",
+      "*=",
+      "**=",
+      "/=",
+      "//=",
+      "%=",
+      "&=",
+      "|=",
+      "^=",
+      "<<=",
+      ">>=",
+      "@="
+    ],
+    "typeAndAnnotationSyntax": [
+      "@",
+      "->",
+      ":"
+    ],
+    "delimiters": [
+      "(",
+      ")",
+      "[",
+      "]",
+      "{",
+      "}"
+    ],
+    "separators": [
+      ",",
+      ";",
+      ".",
+      "..."
+    ]
+  },
+  "reasoning": "MANUAL",
+  "excluded_keywords": [
+    "\\",
+    "\f",
+    "\n",
+    "\r",
+    "·",
+    "·",
+    "፩",
+    "፱",
+    "ᢅ",
+    "ᢆ",
+    "᧚",
+    "℘",
+    "℮",
+    "゛",
+    "゜"
+  ],
+  "model": "gpt-4o-mini",
+  "language": "python3"
+}

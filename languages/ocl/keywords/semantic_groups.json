@@ -1,0 +1,267 @@
+{
+  "groups": {
+    "additiveOperators": [
+      "+",
+      "-"
+    ],
+    "multiplicativeOperators": [
+      "*",
+      "/",
+      "div",
+      "mod"
+    ],
+    "logicalOperators": [
+      "or",
+      "xor",
+      "and",
+      "not",
+      "implies"
+    ],
+    "logicalSymbols": [
+      "=>",
+      "&"
+    ],
+    "relationalOperators": [
+      "<",
+      ">",
+      ">=",
+      "<="
+    ],
+    "equalityOperators": [
+      "=",
+      "<>"
+    ],
+    "types": [
+      "date",
+      "Date",
+      "String",
+      "Real",
+      "real",
+      "Str",
+      "str",
+      "string",
+      "Boolean",
+      "boolean",
+      "Integer",
+      "integer",
+      "int"
+    ],
+    "valueTypes": [
+      "true",
+      "false"
+    ],
+    "undefinedLiteral": [
+      "null",
+      "oclUndefined",
+      "Undefined"
+    ],
+    "conditionals": [
+      "if",
+      "then",
+      "else",
+      "endif"
+    ],
+    "namespaceOperators": [
+      "::"
+    ],
+    "prePostConditions": [
+      "pre",
+      "post",
+      "@pre"
+    ],
+    "constraintDefinition": [
+      "context",
+      "inv"
+    ],
+    "variableBinding": [
+      "let",
+      "in"
+    ],
+    "typeOperations": [
+      "oclAsType",
+      "oclIsKindOf",
+      "oclIsTypeOf",
+      "oclAsSet",
+      "selectByType",
+      "selectByKind"
+    ],
+    "collectionType": [
+      "Collection",
+      "Set",
+      "set",
+      "Sequence",
+      "Bag",
+      "OrderedSet",
+      "Map",
+      "Bag{",
+      "Set{",
+      "Sequence{",
+      "OrderedSet{",
+      "Map{"
+    ],
+    "collectionIterators": [
+      "collect",
+      "forAll",
+      "exists",
+      "iterate",
+      "select",
+      "reject",
+      "one",
+      "isUnique",
+      "any",
+      "collectNested",
+      "sortedBy"
+    ],
+    "collectionOperations": [
+      "includes",
+      "excludes",
+      "count",
+      "size",
+      "includesAll",
+      "excludesAll",
+      "isEmpty",
+      "notEmpty",
+      "sum",
+      "union"
+    ],
+    "typeFunctions": [
+      "oclType",
+      "allInstances",
+      "oclIsUndefined",
+      "oclIsInvalid",
+      "oclIsNew"
+    ],
+    "numericFunctions": [
+      "abs",
+      "floor",
+      "ceil",
+      "round",
+      "log",
+      "exp",
+      "log10",
+      "pow",
+      "gcd",
+      "sqrt",
+      "cbrt",
+      "sqr",
+      "sin",
+      "cos",
+      "tan",
+      "asin",
+      "acos",
+      "atan",
+      "tanh",
+      "sinh",
+      "cosh",
+      "max",
+      "min",
+      "prd"
+    ],
+    "conversionFunctions": [
+      "toInteger",
+      "toReal",
+      "toBoolean",
+      "toUpperCase",
+      "toLowerCase",
+      "asSet",
+      "asBag",
+      "asOrderedSet",
+      "asSequence",
+      "characters"
+    ],
+    "collectionFunctions": [
+      "copy",
+      "sort",
+      "unionAll",
+      "intersectAll",
+      "concatenateAll",
+      "intersection",
+      "including",
+      "excluding",
+      "symmetricDifference",
+      "prepend",
+      "append",
+      "apply",
+      "closure",
+      "subrange"
+    ],
+    "stringFunctions": [
+      "split",
+      "hasPrefix",
+      "hasSuffix",
+      "equalsIgnoreCase",
+      "replace",
+      "replaceAll",
+      "replaceAllMatches",
+      "replaceFirstMatch",
+      "insertAt",
+      "insertInto",
+      "setAt",
+      "indexOf",
+      "lastIndexOf",
+      "firstMatch",
+      "isMatch",
+      "hasMatch",
+      "display"
+    ],
+    "navigationFunctions": [
+      "first",
+      "last",
+      "front",
+      "tail",
+      "reverse",
+      "at"
+    ],
+    "syntaxSymbols": [
+      "(",
+      ")",
+      ":",
+      "[",
+      "]",
+      "|"
+    ],
+    "navigation": [
+      "."
+    ]
+  },
+  "reasoning": "MANUAL",
+  "excluded_keywords": [
+    "!",
+    "--",
+    "/:",
+    "/=",
+    "<:",
+    "?",
+    "/*",
+    "*/",
+    " ",
+    "\"",
+    "'",
+    "\\",
+    "//",
+    ",",
+    "..",
+    "\\'",
+    "\\\\",
+    ";",
+    "derive",
+    "body",
+    "def",
+    "init",
+    "_",
+    "u",
+    "lambda",
+    "Function",
+    "Ref",
+    "derive:",
+    "init:",
+    "|->",
+    "undefinedLiteral",
+    "#",
+    "~",
+    "{",
+    "}"
+  ],
+  "model": "gpt-4o-mini",
+  "language": "ocl"
+}

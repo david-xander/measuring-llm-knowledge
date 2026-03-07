@@ -1,0 +1,22 @@
+{
+  "excluded_keywords": [
+    "\\",
+    "\f",
+    "\n",
+    "\r",
+    "·",
+    "·",
+    "፩",
+    "፱",
+    "ᢅ",
+    "ᢆ",
+    "᧚",
+    "℘",
+    "℮",
+    "゛",
+    "゜"
+  ],
+  "reasoning": "MANUAL",
+  "model": "gpt-4o-mini",
+  "language": "python3"
+}
