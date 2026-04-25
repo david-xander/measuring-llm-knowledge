@@ -193,6 +193,16 @@ ResultsGraph(df).plot_heatmap_keyword_usage(grouped_tables)
         else:
             for key in self.ds_groups.keys():
                 results.append_text(f"### {key}")
+
+                if key=="HumanEval" and language=="python3":
+                    results.append_code("""
+ResultsGraph(df).plot_heatmap_keyword_usage_short(grouped_tables, ['BaseLine-HumanEval', 'deepseek-he', 'deepseek-sm-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he', 'llama-sm-he'], ds_labels={'BaseLine-HumanEval':'BaseLine', 'deepseek-he':'Deepseek', 'deepseek-sm-he': 'DeepSeek-sm', 'gpt-4o-he':'GPT-4o', 'gpt-4o-mini-he':'GPT-4o-mini', 'llama-he':'Llama', 'llama-sm-he': 'Llama-sm'}, keyword_filter=['arithmeticOperators', 'comparisonOperators', 'assignmentOperators','delimiters'], size=(7, 7), vspace=0.8, save_pdf="4_usage_python")
+                    """)
+                elif key=="LLM Generation - Abukhalaf et al., 2023" and language=="ocl":
+                    results.append_code("""
+ResultsGraph(df).plot_heatmap_keyword_usage_short(grouped_tables, ['BaseLine', 'deepseek', 'deepseek-sm', 'gpt-4o', 'gpt-4o-mini', 'llama', 'llama-sm'], ds_labels={'BaseLine':'BaseLine', 'deepseek':'Deepseek', 'deepseek-sm': 'DeepSeek-sm', 'gpt-4o':'GPT-4o', 'gpt-4o-mini':'GPT-4o-mini', 'llama':'Llama', 'llama-sm': 'Llama-sm'}, keyword_filter=['collectionIterators', 'collectionOperations', 'collectionType','conditionals'], size=(7, 7), vspace=0.8, save_pdf="4_usage_ocl")
+                    """)                    
+
                 results.append_code(f"""
 ResultsCoverage(df).get_keyword_coverage_and_correctness_table_v2(df, syntactically_correct_kw_ds, total_kw_ds, rule_usage_vectors_ds, rule_correct_vectors_ds, tree_depth_and_size, {self.ds_groups[key]})
                 """)

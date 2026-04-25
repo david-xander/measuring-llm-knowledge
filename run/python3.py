@@ -74,7 +74,7 @@ class RunAnalysisForPython3HumanEval(RunAnalysisPython3):
     def run_analysis(self, ds_name):
         super().run_analysis(ds_name)
 
-        dataset = load_dataset("openai_humaneval")
+        dataset = load_dataset("openai_humaneval", cache_dir=os.path.join(self.local_dir_path(), 'datasets', 'hf_cache'))
 
 
         for example in dataset["test"]:
@@ -108,7 +108,7 @@ class RunAnalysisForPython3MBPP(RunAnalysisPython3):
         super().run_analysis(ds_name)
 
         # Load dataset
-        dataset = load_dataset("mbpp", "sanitized")
+        dataset = load_dataset("mbpp", "sanitized", cache_dir=os.path.join(self.local_dir_path(), 'datasets', 'hf_cache'))
 
         for example in dataset["test"]:
             print(f"Freq. Task {example['task_id']}")
@@ -175,22 +175,22 @@ class GeneratedPython3(RunAnalysisPython3):
 if __name__ == "__main__":
     
     test = RunAnalysisForPython3HumanEval()
-    # test.run_analysis("HumanEval")
+    test.run_analysis("HumanEval")
 
-    # test = RunAnalysisForPython3MBPP()
-    # test.run_analysis("MBPP")
+    test = RunAnalysisForPython3MBPP()
+    test.run_analysis("MBPP")
 
-    # test = GeneratedPython3()
-    # test.folder = 'python_humanEval'
-    # ds_names = ['deepseek-sm-he', 'deepseek-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-sm-he', 'llama-he']
-    # for ds_name in ds_names:
-    #     test.run_analysis(ds_name)    
+    test = GeneratedPython3()
+    test.folder = 'python_humanEval'
+    ds_names = ['deepseek-sm-he', 'deepseek-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-sm-he', 'llama-he']
+    for ds_name in ds_names:
+        test.run_analysis(ds_name)    
 
-    # test = GeneratedPython3()
-    # test.folder = 'python_mbpp'
-    # ds_names = ['deepseek-sm-mbpp', 'deepseek-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-sm-mbpp', 'llama-mbpp']
-    # for ds_name in ds_names:
-    #     test.run_analysis(ds_name)
+    test = GeneratedPython3()
+    test.folder = 'python_mbpp'
+    ds_names = ['deepseek-sm-mbpp', 'deepseek-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-sm-mbpp', 'llama-mbpp']
+    for ds_name in ds_names:
+        test.run_analysis(ds_name)
 
 
     # ANOTHER DATASET :::      neulab/conala

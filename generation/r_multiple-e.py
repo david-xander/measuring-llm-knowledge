@@ -154,10 +154,8 @@ if __name__ == "__main__":
     dataset = "humanEval"
     results_path = os.path.join(os.getcwd(), 'results', 'r_multipl-e_generated', dataset)
     os.makedirs(results_path, exist_ok=True)
-    # models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct"]
-    models = ["deepseek-coder:6.7b","llama3.1:latest"]
-    # models = ["Llama-3.3-70B-Instruct"]
-    # models = ["deepseek-coder:6.7b","llama3.1:latest"]    
+
+    models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct", "deepseek-coder:6.7b","llama3.1:latest"]    
     test = CodeGeneration(
         language=language,
         models=models,

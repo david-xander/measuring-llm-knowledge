@@ -1,0 +1,524 @@
+{
+  "_comment": "SLE 2026 Artifact — Experiment configuration. name = argument passed to run_analysis(). dataset_path = expected location of the dataset file/folder (for documentation). folder = extra instance attribute required by some run classes.",
+  "output": {
+    "results_dir": "results",
+    "analysis_dir": "analysis"
+  },
+  "languages": {
+    "lua": {
+      "run_module": "lua",
+      "grammar": {
+        "lexer_g4": "languages/lua/parser/LuaLexer.g4",
+        "parser_g4": "languages/lua/parser/LuaParser.g4"
+      },
+      "datasets": [
+        {
+          "name": "lua-00000-of-00001.parquet",
+          "run_class": "BaseLineAnalysisMultiplT",
+          "is_baseline": true,
+          "description": "Multipl-T ground-truth Lua corpus. Saved internally as 'multipl-t'.",
+          "dataset_path": "datasets/multipl-t/lua-00000-of-00001.parquet"
+        },
+        {
+          "name": "deepseek-sm-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/deepseek-sm-he.csv"
+        },
+        {
+          "name": "llama-sm-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/llama-sm-he.csv"
+        },
+        {
+          "name": "deepseek-sm-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/deepseek-sm-mbpp.csv"
+        },
+        {
+          "name": "llama-sm-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/llama-sm-mbpp.csv"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/lua/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/lua/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "datasets": [
+          "multipl-t",
+          "deepseek-he", "gpt-4o-he", "gpt-4o-mini-he", "llama-he",
+          "deepseek-sm-he", "llama-sm-he",
+          "deepseek-mbpp", "gpt-4o-mbpp", "gpt-4o-mini-mbpp", "llama-mbpp",
+          "deepseek-sm-mbpp", "llama-sm-mbpp"
+        ],
+        "ds_groups": {
+          "LLM Generation - Multipl-E (HumanEval)": [
+            "deepseek-he", "gpt-4o-he", "gpt-4o-mini-he", "llama-he",
+            "deepseek-sm-he", "llama-sm-he"
+          ],
+          "LLM Generation - Multipl-E (MBPP)": [
+            "deepseek-mbpp", "gpt-4o-mbpp", "gpt-4o-mini-mbpp", "llama-mbpp",
+            "deepseek-sm-mbpp", "llama-sm-mbpp"
+          ],
+          "Dataset test - Multipl-T": ["multipl-t"]
+        }
+      }
+    },
+
+    "ocl": {
+      "run_module": "ocl",
+      "grammar": {
+        "_note": "OCL uses a single combined grammar file for both lexer and parser rules.",
+        "lexer_g4": "languages/ocl/parser/OCL.g4",
+        "parser_g4": "languages/ocl/parser/OCL.g4"
+      },
+      "datasets": [
+        {
+          "name": "BaseLine.json",
+          "run_class": "BaseLineAnalysis",
+          "is_baseline": true,
+          "description": "Abukhalaf et al. 2023 ground-truth OCL corpus. Saved as 'BaseLine' (extension stripped by class).",
+          "dataset_path": "datasets/OCL_ds/BaseLine.json"
+        },
+        {
+          "name": "gpt-4o",
+          "run_class": "GeneratedOCL",
+          "description": "GPT-4o OCL generation. Class applies filters: LANGUAGE=OCL and TASK!=-1.",
+          "dataset_path": "datasets/OCL_ds_generated/gpt-4o.csv"
+        },
+        {
+          "name": "gpt-4o-mini",
+          "run_class": "GeneratedOCL",
+          "dataset_path": "datasets/OCL_ds_generated/gpt-4o-mini.csv"
+        },
+        {
+          "name": "deepseek",
+          "run_class": "GeneratedOCL",
+          "dataset_path": "datasets/OCL_ds_generated/deepseek.csv"
+        },
+        {
+          "name": "llama",
+          "run_class": "GeneratedOCL",
+          "dataset_path": "datasets/OCL_ds_generated/llama.csv"
+        },
+        {
+          "name": "llama-sm",
+          "run_class": "GeneratedOCL",
+          "dataset_path": "datasets/OCL_ds_generated/llama-sm.csv"
+        },
+        {
+          "name": "deepseek-sm",
+          "run_class": "GeneratedOCL",
+          "dataset_path": "datasets/OCL_ds_generated/deepseek-sm.csv"
+        },
+        {
+          "name": "Pan_et_al.json",
+          "run_class": "PanOCLDataset",
+          "is_baseline": true,
+          "description": "Pan et al. 2024 OCL dataset. Saved as 'Pan_et_al' (extension stripped by class).",
+          "dataset_path": "datasets/OCL_ds2/Pan_et_al.json"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/ocl/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/ocl/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "datasets": [
+          "BaseLine",
+          "deepseek", "gpt-4o", "gpt-4o-mini", "llama", "llama-sm", "deepseek-sm",
+          "Pan_et_al"
+        ],
+        "ds_groups": {
+          "LLM Generation - Abukhalaf et al., 2023": [
+            "BaseLine", "deepseek", "llama", "gpt-4o", "gpt-4o-mini",
+            "llama-sm", "deepseek-sm"
+          ],
+          "Dataset test - Pan et al., 2024": ["Pan_et_al"]
+        }
+      }
+    },
+
+    "plantuml": {
+      "run_module": "plantuml",
+      "grammar": {
+        "lexer_g4": "languages/plantuml/parser/PlantUMLLexer.g4",
+        "parser_g4": "languages/plantuml/parser/PlantUML.g4"
+      },
+      "datasets": [
+        {
+          "name": "BaseLine",
+          "run_class": "RunAnalysisForPlantUMLExamples",
+          "is_baseline": true,
+          "description": "GoldenUMLmodelset ground-truth PlantUML corpus. Loaded via GoldemUMLMOdelsetSpecs().",
+          "dataset_path": "datasets/GoldenUMLmodelset/"
+        },
+        {
+          "name": "gpt-4o",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/gpt-4o/"
+        },
+        {
+          "name": "gpt-4o-mini",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/gpt-4o-mini/"
+        },
+        {
+          "name": "deepseek",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/deepseek/"
+        },
+        {
+          "name": "llama",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/llama/"
+        },
+        {
+          "name": "deepseek-sm",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/deepseek-sm/"
+        },
+        {
+          "name": "llama-sm",
+          "run_class": "RunAnalysisForPlantUMLGeneratedExamples",
+          "dataset_path": "datasets/PlantUML_GoldenUMLmodelset_gentest/llama-sm/"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/plantuml/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/plantuml/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "datasets": [
+          "BaseLine",
+          "gpt-4o", "gpt-4o-mini", "deepseek", "llama", "deepseek-sm", "llama-sm"
+        ],
+        "ds_groups": {
+          "GoldenUMLmodelset": [
+            "BaseLine",
+            "gpt-4o", "gpt-4o-mini", "deepseek", "deepseek-sm", "llama", "llama-sm"
+          ]
+        }
+      }
+    },
+
+    "python3": {
+      "run_module": "python3",
+      "grammar": {
+        "lexer_g4": "languages/python3/parser/Python3Lexer.g4",
+        "parser_g4": "languages/python3/parser/Python3Parser.g4"
+      },
+      "_note_internet": "T1.2 — HumanEval and MBPP entries call load_dataset() from HuggingFace at runtime. Pre-cache to datasets/hf_cache/ and set HF_DATASETS_OFFLINE=1 before running offline (see Task 4).",
+      "datasets": [
+        {
+          "name": "HumanEval",
+          "run_class": "RunAnalysisForPython3HumanEval",
+          "is_baseline": true,
+          "description": "openai/HumanEval from HuggingFace (test split). Saved as 'BaseLine-HumanEval'.",
+          "hf_dataset": "openai_humaneval",
+          "hf_split": "test",
+          "code_columns": ["prompt", "canonical_solution"]
+        },
+        {
+          "name": "MBPP",
+          "run_class": "RunAnalysisForPython3MBPP",
+          "is_baseline": true,
+          "description": "google-research-datasets/mbpp sanitized config from HuggingFace (test split). Saved as 'BaseLine-MBPP'.",
+          "hf_dataset": "mbpp",
+          "hf_config": "sanitized",
+          "hf_split": "test",
+          "code_column": "code"
+        },
+        {
+          "name": "deepseek-sm-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/deepseek-sm-he.csv"
+        },
+        {
+          "name": "deepseek-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/deepseek-he.csv"
+        },
+        {
+          "name": "gpt-4o-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/gpt-4o-he.csv"
+        },
+        {
+          "name": "gpt-4o-mini-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/gpt-4o-mini-he.csv"
+        },
+        {
+          "name": "llama-sm-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/llama-sm-he.csv"
+        },
+        {
+          "name": "llama-he",
+          "run_class": "GeneratedPython3",
+          "folder": "python_humanEval",
+          "dataset_path": "datasets/python_humanEval/llama-he.csv"
+        },
+        {
+          "name": "deepseek-sm-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/deepseek-sm-mbpp.csv"
+        },
+        {
+          "name": "deepseek-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/deepseek-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/gpt-4o-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mini-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/gpt-4o-mini-mbpp.csv"
+        },
+        {
+          "name": "llama-sm-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/llama-sm-mbpp.csv"
+        },
+        {
+          "name": "llama-mbpp",
+          "run_class": "GeneratedPython3",
+          "folder": "python_mbpp",
+          "dataset_path": "datasets/python_mbpp/llama-mbpp.csv"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/python3/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/python3/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "datasets": [
+          "BaseLine-HumanEval", "BaseLine-MBPP",
+          "deepseek-sm-he", "deepseek-he", "gpt-4o-mini-he", "gpt-4o-he", "llama-sm-he", "llama-he",
+          "deepseek-sm-mbpp", "deepseek-mbpp", "gpt-4o-mini-mbpp", "gpt-4o-mbpp", "llama-sm-mbpp", "llama-mbpp"
+        ],
+        "ds_groups": {
+          "HumanEval": [
+            "BaseLine-HumanEval",
+            "deepseek-sm-he", "deepseek-he", "gpt-4o-mini-he", "gpt-4o-he",
+            "llama-sm-he", "llama-he"
+          ],
+          "MBPP": [
+            "BaseLine-MBPP",
+            "deepseek-sm-mbpp", "deepseek-mbpp", "gpt-4o-mini-mbpp", "gpt-4o-mbpp",
+            "llama-sm-mbpp", "llama-mbpp"
+          ]
+        }
+      }
+    },
+
+    "r": {
+      "run_module": "r",
+      "grammar": {
+        "_note": "R uses a single combined grammar file for both lexer and parser rules.",
+        "lexer_g4": "languages/r/parser/R.g4",
+        "parser_g4": "languages/r/parser/R.g4"
+      },
+      "datasets": [
+        {
+          "name": "r-00000-of-00001.parquet",
+          "run_class": "BaseLineAnalysis",
+          "is_baseline": true,
+          "description": "Multipl-T ground-truth R corpus. Saved internally as 'multipl-t'.",
+          "dataset_path": "datasets/multipl-t/r-00000-of-00001.parquet"
+        },
+        {
+          "name": "deepseek-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/deepseek-he.csv"
+        },
+        {
+          "name": "deepseek-sm-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/deepseek-sm-he.csv"
+        },
+        {
+          "name": "gpt-4o-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/gpt-4o-he.csv"
+        },
+        {
+          "name": "gpt-4o-mini-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/gpt-4o-mini-he.csv"
+        },
+        {
+          "name": "llama-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/llama-he.csv"
+        },
+        {
+          "name": "llama-sm-he",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/r_multipl-e_generated/humanEval/llama-sm-he.csv"
+        },
+        {
+          "name": "deepseek-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/deepseek-mbpp.csv"
+        },
+        {
+          "name": "deepseek-sm-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/deepseek-sm-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/gpt-4o-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mini-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/gpt-4o-mini-mbpp.csv"
+        },
+        {
+          "name": "llama-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/llama-mbpp.csv"
+        },
+        {
+          "name": "llama-sm-mbpp",
+          "run_class": "GeneratedRMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/r_multipl-e_generated/mbpp/llama-sm-mbpp.csv"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/r/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/r/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "_note": "Original run/r.py result.datasets omits deepseek-sm-mbpp; added here to match the active generation loop.",
+        "datasets": [
+          "multipl-t",
+          "deepseek-he", "deepseek-sm-he", "gpt-4o-he", "gpt-4o-mini-he", "llama-he", "llama-sm-he",
+          "deepseek-mbpp", "deepseek-sm-mbpp", "gpt-4o-mbpp", "gpt-4o-mini-mbpp", "llama-mbpp", "llama-sm-mbpp"
+        ],
+        "ds_groups": {
+          "_note": "Original run/r.py has a string-concatenation bug: 'deepseek-sm-he' 'gpt-4o-he' (missing comma). Fixed here.",
+          "LLM Generation - Multipl-E (HumanEval)": [
+            "deepseek-he", "deepseek-sm-he", "gpt-4o-he", "gpt-4o-mini-he",
+            "llama-he", "llama-sm-he"
+          ],
+          "LLM Generation - Multipl-E (MBPP)": [
+            "deepseek-mbpp", "deepseek-sm-mbpp", "gpt-4o-mbpp", "gpt-4o-mini-mbpp",
+            "llama-mbpp", "llama-sm-mbpp"
+          ],
+          "Dataset test - Multipl-T": ["multipl-t"]
+        }
+      }
+    },
+
+    "sql": {
+      "run_module": "sql",
+      "grammar": {
+        "lexer_g4": "languages/sql/parser/MariaDBLexer.g4",
+        "parser_g4": "languages/sql/parser/MariaDBParser.g4"
+      },
+      "datasets": [
+        {
+          "name": "BaseLine",
+          "run_class": "RunAnalysisForSQLExamples",
+          "is_baseline": true,
+          "description": "Spider SQL benchmark (dev split). Loaded internally via SpiderLoad from datasets/spider/.",
+          "dataset_path": "datasets/spider/"
+        },
+        {
+          "name": "gpt-4o",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/gpt-4o.csv"
+        },
+        {
+          "name": "gpt-4o-mini",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/gpt-4o-mini.csv"
+        },
+        {
+          "name": "deepseek",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/deepseek.csv"
+        },
+        {
+          "name": "deepseek-sm",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/deepseek-sm.csv"
+        },
+        {
+          "name": "llama",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/llama.csv"
+        },
+        {
+          "name": "llama-sm",
+          "run_class": "GeneratedSQL",
+          "folder": "sql_spider_generated",
+          "dataset_path": "datasets/sql_spider_generated/llama-sm.csv"
+        }
+      ],
+      "keywords": {
+        "source": "semantic_groups_json",
+        "excluded_keywords_path": "languages/sql/keywords/excluded_keywords.json",
+        "semantic_groups_path": "languages/sql/keywords/semantic_groups.json"
+      },
+      "result_writer": {
+        "datasets": [
+          "BaseLine",
+          "deepseek", "gpt-4o", "gpt-4o-mini", "llama", "deepseek-sm", "llama-sm"
+        ],
+        "ds_groups": {
+          "LLM Generation - Spider": [
+            "BaseLine",
+            "deepseek", "gpt-4o", "gpt-4o-mini", "llama", "deepseek-sm", "llama-sm"
+          ]
+        }
+      }
+    }
+  }
+}

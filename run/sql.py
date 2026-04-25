@@ -107,17 +107,17 @@ class GeneratedSQL(RunAnalysisSQL):
 
 if __name__ == "__main__":
     
-    # test = RunAnalysisForSQLExamples()
-    # test.run_analysis("BaseLine")
+    test = RunAnalysisForSQLExamples()
+    test.run_analysis("BaseLine")
 
     test = GeneratedSQL()
     test.folder = "sql_spider_generated"
-    # test.run_analysis("gpt-4o")
-    # test.run_analysis("gpt-4o-mini")
-    # test.run_analysis("deepseek")
-    # test.run_analysis("deepseek-sm")
-    # test.run_analysis("llama")
-    # test.run_analysis("llama-sm")
+    test.run_analysis("gpt-4o")
+    test.run_analysis("gpt-4o-mini")
+    test.run_analysis("deepseek")
+    test.run_analysis("deepseek-sm")
+    test.run_analysis("llama")
+    test.run_analysis("llama-sm")
 
 
     result = KeywordResultWriter()

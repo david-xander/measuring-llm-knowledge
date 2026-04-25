@@ -45,7 +45,7 @@ class BaseLineAnalysis(RunAnalysisOCL):
         super().run_analysis(ds_name)
 
         # Load dataset
-        dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'OCL_Abukhalaf', ds_name)
+        dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'OCL_ds', ds_name)
         df = pd.read_json(dataset_path, encoding="utf-8")
 
         # Frequency
@@ -72,7 +72,7 @@ class BaseLineAnalysis(RunAnalysisOCL):
 class GeneratedOCL(RunAnalysisOCL):   
     def load_results(self, ds_name):
         res = []
-        results_f = os.path.join(self.local_dir_path(), 'datasets', 'OCL_Abukhalaf_generated', ds_name+".csv")
+        results_f = os.path.join(self.local_dir_path(), 'datasets', 'OCL_ds_generated', ds_name+".csv")
         res = pd.read_csv(results_f)
         return res
 
@@ -143,7 +143,7 @@ class PanOCLDataset(RunAnalysisOCL):
         super().run_analysis(ds_name)
 
         # Load dataset
-        dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'OCL_Pan', ds_name)
+        dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'OCL_ds2', ds_name)
         df = pd.read_json(dataset_path, encoding="utf-8")
 
         # Frequency

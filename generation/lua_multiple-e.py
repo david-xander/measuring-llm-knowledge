@@ -154,9 +154,7 @@ if __name__ == "__main__":
     dataset = "humanEval"
     results_path = os.path.join(os.getcwd(), 'results', 'lua_multipl-e_generated', dataset)
     os.makedirs(results_path, exist_ok=True)
-    # models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct"]
-    # models = ["Llama-3.3-70B-Instruct"]
-    models = ["llama3.1:latest"]
+    models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct", "deepseek-coder:6.7b","llama3.1:latest"]
     # models = ["deepseek-coder:6.7b"]    
     test = CodeGeneration(
         language=language,
@@ -166,7 +164,6 @@ if __name__ == "__main__":
     test.run(dataset)
 
     dataset = "mbpp"
-    # models = ["deepseek-coder:6.7b","llama3.1:latest"]
     results_path = os.path.join(os.getcwd(), 'results', 'lua_multipl-e_generated', dataset)
     os.makedirs(results_path, exist_ok=True)  
     test = CodeGeneration(
@@ -174,4 +171,4 @@ if __name__ == "__main__":
         models=models,
         target_path=os.path.join(results_path)
     )
-    # test.run(dataset)    
+    test.run(dataset)    

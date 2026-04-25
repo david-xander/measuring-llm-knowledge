@@ -153,10 +153,7 @@ if __name__ == "__main__":
     os.makedirs(results_path, exist_ok=True)
     
     language = "Python"
-    # models = ["gpt-4o-mini", "gpt-4o"]
-    # models = ["deepseek-coder:6.7b","llama3.1:latest","granite-code:8b"]
-    # models = ["granite-code:8b"]
-    models = ["DeepSeek-V3.1", "Llama-3.3-70B-Instruct"]
+    models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct", "deepseek-coder:6.7b","llama3.1:latest"]
     
     test = MBPPCodeGeneration(
         language=language,

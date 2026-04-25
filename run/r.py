@@ -167,7 +167,7 @@ if __name__ == "__main__":
     result.datasets = ['multipl-t', 'deepseek-he', 'deepseek-sm-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he', 'llama-sm-he', 'deepseek-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-mbpp', 'llama-sm-mbpp']
 
     result.ds_groups = {
-        "LLM Generation - Multipl-E (HumanEval)": ['deepseek-he','deepseek-sm-he' 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he', 'llama-sm-he'],
+        "LLM Generation - Multipl-E (HumanEval)": ['deepseek-he','deepseek-sm-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he', 'llama-sm-he'],
 
         "LLM Generation - Multipl-E (MBPP)": ['deepseek-mbpp', 'deepseek-sm-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-mbpp', 'llama-sm-mbpp'], 
 

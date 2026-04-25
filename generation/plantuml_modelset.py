@@ -125,11 +125,7 @@ def GoldemUMLMOdelsetSpecs(target_path, ext=".md"):
 
 if __name__ == "__main__":
     language = "PlantUML"
-    # models = ["gpt-4o-mini"]
-    # models = ["gpt-4o","gpt-4o-mini"]
-    # models = ["DeepSeek-V3.1", "Llama-3.3-70B-Instruct"]
-    # models = ["Llama-3.3-70B-Instruct"]
-    models = ["llama3.1:latest", "deepseek-coder:6.7b"]    
+    models = ["gpt-4o-mini", "gpt-4o", "DeepSeek-V3.1", "Llama-3.3-70B-Instruct", "deepseek-coder:6.7b","llama3.1:latest"]    
     results_path = os.path.join(os.getcwd(), 'results', f"{language}_GoldenUMLmodelset_gentest")
     
     dataset_path = os.path.join(os.getcwd(), "..", 'datasets', 'GoldenUMLmodelset')
