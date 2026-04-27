@@ -26,6 +26,30 @@
           "dataset_path": "datasets/lua_multipl-e_generated/humanEval/deepseek-sm-he.csv"
         },
         {
+          "name": "deepseek-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/deepseek-he.csv"
+        },
+        {
+          "name": "gpt-4o-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/gpt-4o-he.csv"
+        },
+        {
+          "name": "gpt-4o-mini-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/gpt-4o-mini-he.csv"
+        },
+        {
+          "name": "llama-he",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "humanEval",
+          "dataset_path": "datasets/lua_multipl-e_generated/humanEval/llama-he.csv"
+        },        
+        {
           "name": "llama-sm-he",
           "run_class": "GeneratedLuaMultiplE",
           "folder": "humanEval",
@@ -42,6 +66,30 @@
           "run_class": "GeneratedLuaMultiplE",
           "folder": "mbpp",
           "dataset_path": "datasets/lua_multipl-e_generated/mbpp/llama-sm-mbpp.csv"
+        },
+        {
+          "name": "deepseek-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/deepseek-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/gpt-4o-mbpp.csv"
+        },
+        {
+          "name": "gpt-4o-mini-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/gpt-4o-mini-mbpp.csv"
+        },
+        {
+          "name": "llama-mbpp",
+          "run_class": "GeneratedLuaMultiplE",
+          "folder": "mbpp",
+          "dataset_path": "datasets/lua_multipl-e_generated/mbpp/llama-mbpp.csv"
         }
       ],
       "keywords": {
