@@ -76,7 +76,6 @@ class BaseLineAnalysisMultiplT(RunAnalysisLua):
         # Load dataset
         dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'multipl-t', ds_name)
         df = pd.read_parquet(dataset_path)
-        df = df.head(10)
 
 
         # Frequency
@@ -92,10 +91,10 @@ class BaseLineAnalysisMultiplT(RunAnalysisLua):
             self.compute_syntactic_usage_add_result(code)
 
         # Sequences
-        for i, row in df.iterrows():
-            print(f"Sequences. DS {ds_name}, Task {i}")
-            code = row["content"]
-            self.extract_valid_rule_sequences_add_result(code)
+        # for i, row in df.iterrows():
+        #     print(f"Sequences. DS {ds_name}, Task {i}")
+        #     code = row["content"]
+        #     self.extract_valid_rule_sequences_add_result(code)
 
         ds_name, _ = os.path.splitext(ds_name)
         self.save_results(dataset_name='multipl-t', language="lua")

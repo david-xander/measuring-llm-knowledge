@@ -97,10 +97,10 @@ class BaseLineAnalysis(RunAnalysisR):
             self.compute_syntactic_usage_add_result(code)
 
         # Sequences
-        for i, row in df.iterrows():
-            print(f"Sequences. DS {ds_name}, Task {i}")
-            code = row["content"]
-            self.extract_valid_rule_sequences_add_result(code)
+        # for i, row in df.iterrows():
+        #     print(f"Sequences. DS {ds_name}, Task {i}")
+        #     code = row["content"]
+        #     self.extract_valid_rule_sequences_add_result(code)
 
         ds_name, _ = os.path.splitext(ds_name)
         self.save_results(dataset_name='multipl-t', language="r")
