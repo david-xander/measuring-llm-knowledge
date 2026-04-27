@@ -60,7 +60,8 @@ class RunAnalysisR(RunAnalysis):
         self.parser_rules = extractor.parser_rules
     
     def run_analysis(self, ds_name):
-        super().run_analysis(ds_name)           
+        super().run_analysis(ds_name)      
+        print(f"Starting analysis for {ds_name}...")     
 
 class BaseLineAnalysis(RunAnalysisR):
         
@@ -84,17 +85,20 @@ class BaseLineAnalysis(RunAnalysisR):
                       
 
         # Frequency
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Frequency. DS {ds_name}, Task {i}")
             code = row["content"]
             self.compute_frequency_add_result(code)
         
         # Syntactic
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Syntactic. DS {ds_name}, Task {i}")
             code = row["content"]
             self.compute_syntactic_usage_add_result(code)
 
         # Sequences
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Sequences. DS {ds_name}, Task {i}")
             code = row["content"]
             self.extract_valid_rule_sequences_add_result(code)
 

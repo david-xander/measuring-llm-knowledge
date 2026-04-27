@@ -38,7 +38,8 @@ class RunAnalysisOCL(RunAnalysis):
         self.parser_rules = extractor.parser_rules
 
     def run_analysis(self, ds_name):
-        super().run_analysis(ds_name)           
+        super().run_analysis(ds_name)
+        print(f"Starting analysis for {ds_name}...") 
 
 class BaseLineAnalysis(RunAnalysisOCL):
     def run_analysis(self, ds_name):

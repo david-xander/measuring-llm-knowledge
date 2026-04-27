@@ -74,7 +74,6 @@
     "ocl": {
       "run_module": "ocl",
       "grammar": {
-        "_note": "OCL uses a single combined grammar file for both lexer and parser rules.",
         "lexer_g4": "languages/ocl/parser/OCL.g4",
         "parser_g4": "languages/ocl/parser/OCL.g4"
       },
@@ -216,7 +215,6 @@
         "lexer_g4": "languages/python3/parser/Python3Lexer.g4",
         "parser_g4": "languages/python3/parser/Python3Parser.g4"
       },
-      "_note_internet": "T1.2 — HumanEval and MBPP entries call load_dataset() from HuggingFace at runtime. Pre-cache to datasets/hf_cache/ and set HF_DATASETS_OFFLINE=1 before running offline (see Task 4).",
       "datasets": [
         {
           "name": "HumanEval",
@@ -339,7 +337,6 @@
     "r": {
       "run_module": "r",
       "grammar": {
-        "_note": "R uses a single combined grammar file for both lexer and parser rules.",
         "lexer_g4": "languages/r/parser/R.g4",
         "parser_g4": "languages/r/parser/R.g4"
       },
@@ -430,14 +427,12 @@
         "semantic_groups_path": "languages/r/keywords/semantic_groups.json"
       },
       "result_writer": {
-        "_note": "Original run/r.py result.datasets omits deepseek-sm-mbpp; added here to match the active generation loop.",
         "datasets": [
           "multipl-t",
           "deepseek-he", "deepseek-sm-he", "gpt-4o-he", "gpt-4o-mini-he", "llama-he", "llama-sm-he",
           "deepseek-mbpp", "deepseek-sm-mbpp", "gpt-4o-mbpp", "gpt-4o-mini-mbpp", "llama-mbpp", "llama-sm-mbpp"
         ],
         "ds_groups": {
-          "_note": "Original run/r.py has a string-concatenation bug: 'deepseek-sm-he' 'gpt-4o-he' (missing comma). Fixed here.",
           "LLM Generation - Multipl-E (HumanEval)": [
             "deepseek-he", "deepseek-sm-he", "gpt-4o-he", "gpt-4o-mini-he",
             "llama-he", "llama-sm-he"
