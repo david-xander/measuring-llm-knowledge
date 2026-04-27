@@ -65,7 +65,8 @@ class RunAnalysisLua(RunAnalysis):
             return "".join(normalized)
 
     def run_analysis(self, ds_name):
-        super().run_analysis(ds_name)           
+        super().run_analysis(ds_name)     
+        print(f"Starting analysis for {ds_name}...")      
 
 class BaseLineAnalysisMultiplT(RunAnalysisLua):
         
@@ -75,20 +76,24 @@ class BaseLineAnalysisMultiplT(RunAnalysisLua):
         # Load dataset
         dataset_path = os.path.join(self.local_dir_path(), 'datasets', 'multipl-t', ds_name)
         df = pd.read_parquet(dataset_path)
+        df = df.head(10)
 
 
         # Frequency
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Frequency. DS {ds_name}, Task {i}")
             code = row["content"]
             self.compute_frequency_add_result(code)
         
         # Syntactic
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Syntactic. DS {ds_name}, Task {i}")
             code = row["content"]
             self.compute_syntactic_usage_add_result(code)
 
         # Sequences
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Sequences. DS {ds_name}, Task {i}")
             code = row["content"]
             self.extract_valid_rule_sequences_add_result(code)
 
@@ -141,15 +146,13 @@ if __name__ == "__main__":
 
     test = GeneratedLuaMultiplE()
     test.folder = 'humanEval'
-    # ds_names = ['deepseek-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he']
-    ds_names = ['deepseek-sm-he', 'llama-sm-he']
+    ds_names = ['deepseek-he', 'deepseek-sm-he', 'gpt-4o-he', 'gpt-4o-mini-he', 'llama-he', 'llama-sm-he']
     for ds_name in ds_names:
         test.run_analysis(ds_name)  
 
     test = GeneratedLuaMultiplE()
     test.folder = 'mbpp'
-    # ds_names = ['deepseek-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-mbpp']
-    ds_names = ['deepseek-sm-mbpp', 'llama-sm-mbpp']
+    ds_names = ['deepseek-mbpp', 'deepseek-sm-mbpp', 'gpt-4o-mbpp', 'gpt-4o-mini-mbpp', 'llama-mbpp', 'llama-sm-mbpp']
     for ds_name in ds_names:
         test.run_analysis(ds_name)
 

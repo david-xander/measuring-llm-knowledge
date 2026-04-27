@@ -69,6 +69,7 @@ class RunAnalysisPython3(RunAnalysis):
     
     def run_analysis(self, ds_name):
         super().run_analysis(ds_name)    
+        print(f"Starting analysis for {ds_name}...")
 
 class RunAnalysisForPython3HumanEval(RunAnalysisPython3):     
     def run_analysis(self, ds_name):

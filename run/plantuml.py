@@ -39,7 +39,8 @@ class RunAnalysisPlantUML(RunAnalysis):
         self.parser_rules = extractor.parser_rules  
     
     def run_analysis(self, ds_name):
-        super().run_analysis(ds_name)    
+        super().run_analysis(ds_name)
+        print(f"Starting analysis for {ds_name}...") 
 
 class RunAnalysisForPlantUMLExamples(RunAnalysisPlantUML):    
     def run_analysis(self, ds_name):
@@ -81,13 +82,16 @@ class RunAnalysisForPlantUMLGeneratedExamples(RunAnalysisPlantUML):
         files = self.load_results(ds_name)
         df = pd.concat(files)
 
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Frequency. DS {ds_name}, Task {i}")
             self.compute_frequency_add_result(code=row["code"])
 
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Syntactic. DS {ds_name}, Task {i}")
             self.compute_syntactic_usage_add_result(code=row["code"])
 
-        for _, row in df.iterrows():
+        for i, row in df.iterrows():
+            print(f"Sequences. DS {ds_name}, Task {i}")
             self.extract_valid_rule_sequences_add_result(code=row["code"])
 
         self.save_results(dataset_name=ds_name, language="plantuml")
