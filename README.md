@@ -204,7 +204,7 @@ python experiment/main.py --all-together-notebook
 
 Generates LLM code completions for any of the six supported languages and
 saves them to `generation/results/`. Results must be **manually copied** to
-the appropriate `datasets/` subfolder before running `main.py`.[^1]
+the appropriate `datasets/` subfolder before running `main.py`. After generation, file names must be **manually renamed** to match the unified naming convention used across the project (e.g. `DeepSeek-V3.1_spider.csv` → `deepseek.csv`). This convention unifies model and dataset identifiers across all languages and is required for `main.py` to locate the files correctly.
 
 > To add support for additional LLM models, see [Extending the Framework](#extending-the-framework).
 
@@ -252,11 +252,6 @@ python experiment/generate.py --language ALL
 | Lua | `lua_multipl-e_generated/humanEval/` and `lua_multipl-e_generated/mbpp/` | `lua_multipl-e_generated/humanEval/` and `lua_multipl-e_generated/mbpp/` |
 | R | `r_multipl-e_generated/humanEval/` and `r_multipl-e_generated/mbpp/` | `r_multipl-e_generated/humanEval/` and `r_multipl-e_generated/mbpp/` |
 
-[^1]: After generation, file names must be **manually renamed** to match the
-unified naming convention used across the project (e.g.
-`DeepSeek-V3.1_spider.csv` → `deepseek.csv`). This convention unifies model
-and dataset identifiers across all languages and is required for `main.py` to
-locate the files correctly.
 
 ---
 
